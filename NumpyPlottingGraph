@@ -1,0 +1,34 @@
+import sqlite3, csv
+import numpy as np
+
+con = sqlite3.connect('Database.db')
+cursor = con.cursor()
+rec = 0
+with open('Products.csv','r') as file:
+    for row in life:
+        cursor.execute('INSERT INTO Products VALUES(?,?,?,?)',row.slpit(','))
+        con.commit()
+        rec +=1
+con.close()
+print('\n{} records transferred')
+#converting the numeric values to arrays
+a = np.array([25,40,35,30,9,24,10])
+np.histogram(a,bins=[0,5,10,15,20,25,30,35])
+#creating class intervals
+hist,bins = np.histogram(a,bins=[0,5,10,15,20,25,30,35])
+print (hist)
+print (bins)
+
+
+#plotting graph
+from matplotlib import pyplot as plt #importing the pyplot
+import numpy as np                   #importing numpy
+
+a = np.array([25,40,35,30,9,24,10])
+plt.hist(a,bins=[0,5,10,15,20,25,30,35])
+#title of the graph
+plt.title('histogram')
+#x and y labels
+plt.xlabel('Product Type')
+plt.ylabel('Products bought')
+plt.show()
