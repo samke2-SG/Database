@@ -1,0 +1,12 @@
+import sqlite3
+#connect to database
+con = sqlite3.connect('Database.db')
+#create cursor
+c = con.cursor()
+#executing query
+c.execute("""CREATE TABLE Products(s text , si text, samke text, sisa text)""")
+
+res = c.fetchall()
+#c.execute("""""")
+con.commit()
+con.close
